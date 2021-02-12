@@ -1,0 +1,114 @@
+---
+title: ggplot and object
+author: Masatoshi Katabuchi
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 2
+    number_sections: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+      toc: true
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, cache=TRUE, warning=FALSE, message=FALSE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+iris %>% head
+```
+
+```{r}
+p <- ggplot(iris, aes(x = Species, y = Sepal.Length))
+```
+
+Elements in `p`
+
+```{r}
+names(p)
+```
+
+- default
+  - data
+  - mapping
+- layers
+  - (data)
+  - (mapping)
+  - geom
+  - stat
+  - position
+- scales
+- coorddinates
+- facet
+- theme
+- labels
+
+
+# layers
+
+
+```{r}
+p$data %>% str
+
+p$mapping %>% str
+
+p$layer %>% str
+```
+
+```{r}
+p 
+```
+
+```{r}
+p2 <- p + geom_boxplot()
+```
+
+
+```{r}
+p2$layer %>% str
+```
+
+
+```{r}
+p2
+```
+
+
+```{r}
+p3 <- p2 + geom_point()
+```
+
+```{r}
+p3$layer %>% str
+```
+
+
+```{r}
+g <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) + geom_point()
+```
+
+# facet
+
+
+```{r}
+g + facet_wrap(~ Species)
+g + facet_wrap(~ Species, scale = "free")
+```
+
+
+```{r}
+g + facet_grid(cut(Petal.Length, 3) ~ Species)
+g + facet_grid(cut(Petal.Length, 3) ~ Species, scale = "free")
+```

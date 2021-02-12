@@ -48,6 +48,10 @@ output:
 ```{r titleslide, child="scripts/titleslide.Rmd"}
 ```
 
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
 ---
 
 ::: {.grid grid: 1fr / 1.2fr 2fr;}
@@ -150,7 +154,6 @@ What profession.
 What they want to learn.  
 What's their hobbies.  
 Are they going to the conference?
-
 
 
 `r countdown::countdown(3, font_size = "1em")`

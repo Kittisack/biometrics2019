@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
   size       = 'normalsize',
   background = '#F7F7F7',
   comment    = ' ',
-  dev        ='svg',
+  #dev        ='svg',
   dev.args   = list(bg = 'transparent'),
   cache      = FALSE,
   cache.path ='cache/',

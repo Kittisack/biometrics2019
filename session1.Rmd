@@ -54,6 +54,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+```
+
 
 ---
 

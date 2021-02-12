@@ -20,7 +20,7 @@ thm_grey <- theme(
   ) 
 ```
 
-```{r data, cache = TRUE, echo = FALSE}
+```{r data, cache = TRUE, echo = TRUE}
 df_aust <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-28/winemag-data-130k-v2.csv") %>% 
   select(-X1) %>% 
   unique() %>% 
@@ -35,7 +35,7 @@ df_aust <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/ti
                                         Vic = "Victoria",)) 
 ```
 
-```{r state-wine, echo = FALSE, eval = FALSE}
+```{r state-wine, echo = TRUE, eval = TRUE}
 img_wine <- readPNG(here::here("images", "wine.png"))
 g_wine <- rasterGrob(img_wine, interpolate=TRUE)
 
@@ -61,7 +61,7 @@ df_aust %>%
 ```
 
 
-```{r variety-wine, echo = FALSE, eval = FALSE}
+```{r variety-wine, echo = TRUE, eval = TRUE}
 img_grape <- readPNG(here::here("images", "grapes.png"))
 g_grape <- rasterGrob(img_grape, interpolate=TRUE)
 
